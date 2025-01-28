@@ -1,0 +1,54 @@
+--- 
+author: "Guy F. Sutton" 
+categories: [Julia] 
+date: 2017-02-02
+description: "Julia dummy" 
+format:
+  html:
+    toc: true
+    toc-location: left
+title: "Julia demo" 
+engine: julia
+draft: true
+---
+
+This week I was asked to give a presentation on giving presentations.
+
+So meta.
+
+```{r}
+#| label: r_setup
+
+# Load R packages 
+library(JuliaCall)
+# julia_setup()
+```
+
+```{julia}
+#| label: julia-setup
+
+# Load Julia's package manager
+using Pkg
+
+# Install required packages (once-off)
+# Pkg.add("DataFrames")      # Manipulating data structures 
+# Pkg.add("CSV")             # Import and process .csv files
+# Pkg.add("Plots")           # Plot figures 
+# Pkg.add("PalmerPenguins")  # Palmerpenguins data 
+
+# Load required packages 
+# using DataFrames
+# using CSV
+using Plots 
+# using PalmerPenguins 
+```
+
+```{julia}
+# Test simple plot 
+plot(sin, 
+     x -> sin(2x), 
+     0, 
+     2π, 
+     leg = false, 
+     fill = (0,:lavender))
+```
